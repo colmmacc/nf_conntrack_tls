@@ -3,12 +3,15 @@
 ## THIS MODULE IS AN EXPERIMENTAL WORK IN PROGRESS
 
 nf_conntrack_tls is an experimental connection tracking module for linux which
-tracks the SSL/TLS state associated with an encrypted connection. The ultimate
-goal of this module is to provide a framework to safeguard SSL/TLS application 
-stacks.
+tracks the SSL/TLS state associated with an encrypted connection. 
 
 This module tracks the SSL/TLS state machine and drops connections that no 
 longer appear to obey some semantics of the SSL/TLS protocols. 
+
+**Note:** I wouldn't recommend actually using the module. The module is/was an
+emergency and temporary measure borne out of necessity. In general, moving input
+processing risks to the kernel is an especially bad idea. But I've uploaded the
+module in case it can serve as a useful example of a stateful conn track module.
 
 Initially, three protocol validations are performed:
 
